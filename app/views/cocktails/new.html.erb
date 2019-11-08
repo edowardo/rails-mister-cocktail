@@ -2,6 +2,8 @@
   <h1>Let's mix ourselves up a litlle su'n</h1>
   <%= simple_form_for(@cocktail) do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Mix it!", class: "btn btn-primary"%>
   <% end %>
 
