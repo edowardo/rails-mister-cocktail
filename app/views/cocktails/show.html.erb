@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Here the cocktail: <%= @cocktail.name %></h1>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% if @cocktail.photo.file %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <img src="https://www.thespruceeats.com/thmb/dlJ9frrWnwGf6UHIwZzFjfFvOoM=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/_kamikaze-cocktail-recipe-759313-hero-5bb7c7e846e0fb0051ee4eb4.jpg" style="width: 400px"/>
+  <% end %>
   <p>Ingredients:</p>
   <ul>
     <% @cocktail.doses.each do |dose| %>
