@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
-        <%= link_to cocktail_path(cocktail) do %>
+        <%= link_to cocktail_path(cocktail), style: "text-decoration: none;" do %>
           <%= render partial: 'card-trip', locals: {cocktail: cocktail} %>
         <% end %>
       <% end %>
